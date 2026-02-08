@@ -767,5 +767,21 @@ span { color: var(--main-color); }
     min-width: 25px; /* حجز مساحة ثابتة للأيقونة */
     margin-top: 5px; /* ضبط المحاذاة */
 }
+/* تحسين شكل صندوق المعلومات (Project Info Box) */
+.details-sidebar .info-box {
+    margin-top: 3rem; /* إضافة مسافة بين زر GitHub والجدول */
+    border: 1px solid rgba(0, 210, 255, 0.2); /* جعل الحدود بلون الثيم الرئيسي خفيف */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* إضافة ظل خفيف للعمق */
+}
+
+/* تحسين الخطوط داخل الجدول */
+.details-sidebar ul li {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* خط فاصل خفيف بين المعلومات */
+}
+
+.details-sidebar ul li:last-child {
+    border-bottom: none; /* إزالة الخط من آخر عنصر */
+}
 
 

@@ -597,4 +597,43 @@ span { color: var(--main-color); }
     .home-content h1 { font-size: 4rem; }
     .contact-container { flex-direction: column; }
     .portfolio-container { grid-template-columns: 1fr; }
+
+}
+/* --- إصلاح المشكلة للجوال (Mobile Fix) --- */
+@media (max-width: 768px) {
+    /* إجبار طبقة التفاصيل على الظهور دائماً */
+    .portfolio-layer {
+        transform: translateY(0);
+        background: linear-gradient(rgba(22, 27, 46, 0.9), var(--main-color)); /* خلفية أغمق قليلاً للقراءة */
+    }
+
+    /* تحسين شكل النصوص لتكون واضحة دائماً */
+    .portfolio-layer h4 {
+        margin-bottom: 0.5rem;
+    }
+    
+    .portfolio-layer p {
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem; /* تصغير الخط قليلاً للموبايل */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* إظهار 3 أسطر فقط من الوصف */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* التأكد من أن الزر قابل للضغط */
+    .btn-icon {
+        width: 4rem;
+        height: 4rem;
+        background: var(--main-color); /* جعل الزر ملوناً ليعرف المستخدم أنه قابل للضغط */
+    }
+    
+    .btn-icon i {
+        color: #fff;
+    }
+
+    /* تعديل ارتفاع الصندوق ليكون مناسباً */
+    .portfolio-box {
+        height: 250px;
+    }
 }

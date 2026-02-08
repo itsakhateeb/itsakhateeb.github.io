@@ -637,3 +637,75 @@ span { color: var(--main-color); }
         height: 250px;
     }
 }
+
+/* ========================================= */
+/* === MOBILE FIXES (إصلاحات الجوال) === */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+    /* 1. إصلاح الهوامش الكبيرة التي تضيع المساحة */
+    section {
+        padding: 8rem 5% 2rem; /* تقليل الحواف الجانبية */
+    }
+
+    /* 2. إصلاح مشكلة تداخل النصوص (Key Features & Pipeline) */
+    .details-grid {
+        display: flex;           /* إلغاء نظام الشبكة المعقد */
+        flex-direction: column;  /* ترتيب العناصر تحت بعضها */
+        gap: 3rem;
+    }
+
+    .feature-list li {
+        display: flex;           /* استخدام الفليكس للقائمة */
+        align-items: flex-start; /* محاذاة الأيقونة مع بداية النص */
+        gap: 15px;               /* مسافة بين الأيقونة والنص */
+        text-align: left;        /* محاذاة النص لليسار */
+    }
+
+    .feature-list li i {
+        min-width: 25px;         /* منع الأيقونة من الانكماش */
+        margin-top: 5px;         /* ضبط موقع الأيقونة */
+    }
+
+    /* 3. إصلاح اختفاء تفاصيل المشاريع (Latest Projects) */
+    .portfolio-box {
+        height: auto;            /* السماح للصندوق بالتمدد */
+        min-height: 280px;       /* ضمان ارتفاع مناسب */
+        display: flex;
+        flex-direction: column;  /* وضع الأيقونة فوق النص */
+    }
+
+    .portfolio-layer {
+        position: relative;      /* إلغاء الوضع العائم */
+        width: 100%;
+        height: auto;
+        transform: translateY(0); /* إظهار العنصر دائماً */
+        background: var(--second-bg-color); /* لون خلفية ثابت */
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;        /* دفع النص للأسفل */
+    }
+
+    .project-placeholder {
+        height: 150px;           /* تصغير مساحة الأيقونة الكبيرة */
+        background: transparent;
+    }
+    
+    .project-placeholder i {
+        font-size: 6rem;         /* تصغير الأيقونة قليلاً */
+    }
+
+    /* 4. إصلاح حجم الخطوط في العناوين */
+    .home-content h1 {
+        font-size: 3.5rem;       /* تصغير العنوان الرئيسي */
+    }
+    
+    .heading {
+        font-size: 3rem;         /* تصغير عناوين الأقسام */
+    }
+}
+

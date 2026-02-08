@@ -138,7 +138,7 @@ span { color: var(--main-color); }
 
 .btn:hover { box-shadow: 0 0 30px var(--main-color); transform: scale(1.05); }
 
-/* --- Scroll Down Indicator (New) --- */
+/* --- Scroll Down Indicator --- */
 .scroll-down {
     position: absolute;
     bottom: 3rem;
@@ -574,149 +574,11 @@ span { color: var(--main-color); }
 }
 .footer p { font-size: 1.4rem; color: #aaa; }
 
-/* --- Responsive --- */
-@media (max-width: 991px) {
-    .header { padding: 2rem 4%; }
-    section { padding: 10rem 4% 2rem; }
-    .timeline-items::before { left: 7px; }
-    .timeline-item:nth-child(odd) { padding-right: 0; text-align: left; padding-left: 37px; }
-    .timeline-item:nth-child(even) { padding-left: 37px; }
-    .timeline-item:nth-child(odd) .timeline-content { text-align: left; }
-    .timeline-dot { left: 0; }
-    
-    /* Project Details Responsive */
-    .details-grid { grid-template-columns: 1fr; }
-    .project-hero { height: 50vh; }
-    .project-hero-content h1 { font-size: 3.5rem; }
-}
 
-@media (max-width: 768px) {
-    #menu-icon { display: block; }
-    .navbar { position: absolute; top: 100%; left: 0; width: 100%; padding: 1rem 3%; background: var(--second-bg-color); border-top: 1px solid #333; display: none; }
-    .navbar.active { display: block; }
-    .home-content h1 { font-size: 4rem; }
-    .contact-container { flex-direction: column; }
-    .portfolio-container { grid-template-columns: 1fr; }
+/* --- New List Styles (Pipeline & Features) --- */
+.mt-4 { margin-top: 3rem; }
 
-}
-/* --- إصلاح المشكلة للجوال (Mobile Fix) --- */
-@media (max-width: 768px) {
-    /* إجبار طبقة التفاصيل على الظهور دائماً */
-    .portfolio-layer {
-        transform: translateY(0);
-        background: linear-gradient(rgba(22, 27, 46, 0.9), var(--main-color)); /* خلفية أغمق قليلاً للقراءة */
-    }
-
-    /* تحسين شكل النصوص لتكون واضحة دائماً */
-    .portfolio-layer h4 {
-        margin-bottom: 0.5rem;
-    }
-    
-    .portfolio-layer p {
-        margin-bottom: 1.5rem;
-        font-size: 1.3rem; /* تصغير الخط قليلاً للموبايل */
-        display: -webkit-box;
-        -webkit-line-clamp: 3; /* إظهار 3 أسطر فقط من الوصف */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    /* التأكد من أن الزر قابل للضغط */
-    .btn-icon {
-        width: 4rem;
-        height: 4rem;
-        background: var(--main-color); /* جعل الزر ملوناً ليعرف المستخدم أنه قابل للضغط */
-    }
-    
-    .btn-icon i {
-        color: #fff;
-    }
-
-    /* تعديل ارتفاع الصندوق ليكون مناسباً */
-    .portfolio-box {
-        height: 250px;
-    }
-}
-
-/* ========================================= */
-/* === MOBILE FIXES (إصلاحات الجوال) === */
-/* ========================================= */
-
-@media (max-width: 768px) {
-
-    /* 1. إصلاح الهوامش الكبيرة التي تضيع المساحة */
-    section {
-        padding: 8rem 5% 2rem; /* تقليل الحواف الجانبية */
-    }
-
-    /* 2. إصلاح مشكلة تداخل النصوص (Key Features & Pipeline) */
-    .details-grid {
-        display: flex;           /* إلغاء نظام الشبكة المعقد */
-        flex-direction: column;  /* ترتيب العناصر تحت بعضها */
-        gap: 3rem;
-    }
-
-    .feature-list li {
-        display: flex;           /* استخدام الفليكس للقائمة */
-        align-items: flex-start; /* محاذاة الأيقونة مع بداية النص */
-        gap: 15px;               /* مسافة بين الأيقونة والنص */
-        text-align: left;        /* محاذاة النص لليسار */
-    }
-
-    .feature-list li i {
-        min-width: 25px;         /* منع الأيقونة من الانكماش */
-        margin-top: 5px;         /* ضبط موقع الأيقونة */
-    }
-
-    /* 3. إصلاح اختفاء تفاصيل المشاريع (Latest Projects) */
-    .portfolio-box {
-        height: auto;            /* السماح للصندوق بالتمدد */
-        min-height: 280px;       /* ضمان ارتفاع مناسب */
-        display: flex;
-        flex-direction: column;  /* وضع الأيقونة فوق النص */
-    }
-
-    .portfolio-layer {
-        position: relative;      /* إلغاء الوضع العائم */
-        width: 100%;
-        height: auto;
-        transform: translateY(0); /* إظهار العنصر دائماً */
-        background: var(--second-bg-color); /* لون خلفية ثابت */
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: auto;        /* دفع النص للأسفل */
-    }
-
-    .project-placeholder {
-        height: 150px;           /* تصغير مساحة الأيقونة الكبيرة */
-        background: transparent;
-    }
-    
-    .project-placeholder i {
-        font-size: 6rem;         /* تصغير الأيقونة قليلاً */
-    }
-
-    /* 4. إصلاح حجم الخطوط في العناوين */
-    .home-content h1 {
-        font-size: 3.5rem;       /* تصغير العنوان الرئيسي */
-    }
-    
-    .heading {
-        font-size: 3rem;         /* تصغير عناوين الأقسام */
-    }
-}
-
-/* --- تحسينات القوائم (Feature & Pipeline) --- */
-
-/* إضافة مسافة علوية للعناوين بشكل أنيق */
-.mt-4 {
-    margin-top: 3rem;
-}
-
-/* تنسيق قائمة الخطوات (Pipeline) */
+/* Pipeline List */
 .pipeline-list {
     list-style: none;
     margin-top: 1.5rem;
@@ -729,7 +591,7 @@ span { color: var(--main-color); }
     margin-bottom: 1.5rem;
     font-size: 1.6rem;
     color: #ccc;
-    background: rgba(255, 255, 255, 0.03); /* خلفية خفيفة لكل خطوة */
+    background: rgba(255, 255, 255, 0.03);
     padding: 1.5rem;
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -741,7 +603,6 @@ span { color: var(--main-color); }
     transform: translateX(5px);
 }
 
-/* تصميم دائرة الرقم (1, 2, 3...) */
 .step-number {
     background: var(--main-color);
     color: var(--bg-color);
@@ -753,35 +614,141 @@ span { color: var(--main-color); }
     align-items: center;
     font-weight: bold;
     font-size: 1.4rem;
-    flex-shrink: 0; /* يمنع الدائرة من الانكماش على الموبايل */
+    flex-shrink: 0;
 }
 
-/* تحسين قائمة المميزات (Features) لضمان عدم تداخل الأيقونة */
+/* Features List */
 .feature-list li {
     display: flex;
-    align-items: flex-start; /* محاذاة الأيقونة مع أعلى النص */
+    align-items: flex-start;
     gap: 1.5rem;
 }
 
 .feature-list li i {
-    min-width: 25px; /* حجز مساحة ثابتة للأيقونة */
-    margin-top: 5px; /* ضبط المحاذاة */
-}
-/* تحسين شكل صندوق المعلومات (Project Info Box) */
-.details-sidebar .info-box {
-    margin-top: 3rem; /* إضافة مسافة بين زر GitHub والجدول */
-    border: 1px solid rgba(0, 210, 255, 0.2); /* جعل الحدود بلون الثيم الرئيسي خفيف */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* إضافة ظل خفيف للعمق */
+    min-width: 25px;
+    margin-top: 5px;
 }
 
-/* تحسين الخطوط داخل الجدول */
+/* Project Info Sidebar */
+.details-sidebar .info-box {
+    margin-top: 3rem;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
 .details-sidebar ul li {
     padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* خط فاصل خفيف بين المعلومات */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .details-sidebar ul li:last-child {
-    border-bottom: none; /* إزالة الخط من آخر عنصر */
+    border-bottom: none;
 }
 
 
+/* ================================================= */
+/* === TABLET & MOBILE FIXES (إصلاحات التابلت والموبايل) === */
+/* ================================================= */
+
+/* نستخدم 1024px ليشمل الآيباد والتابلت */
+@media (max-width: 1024px) {
+
+    .header { padding: 2rem 4%; }
+    
+    /* --- 1. إصلاح المشاريع (إظهار التفاصيل دائماً) --- */
+    .portfolio-container { grid-template-columns: 1fr; }
+
+    .portfolio-box {
+        height: auto;
+        min-height: 300px; /* زيادة الارتفاع ليتسع للنص */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* المحتوى في الأسفل */
+    }
+
+    .portfolio-layer {
+        position: relative; /* إلغاء التموضع الحر */
+        transform: translateY(0) !important; /* إجبار الظهور */
+        opacity: 1 !important;
+        background: var(--second-bg-color); /* خلفية ثابتة */
+        padding: 2rem;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-top: 2px solid var(--main-color); /* خط جمالي */
+    }
+    
+    .portfolio-layer h4 { margin-bottom: 0.5rem; }
+    
+    .portfolio-layer p {
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    /* جعل الأيقونة في الأعلى */
+    .project-placeholder {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .project-placeholder i {
+        font-size: 5rem;
+    }
+
+    /* التأكد من أن زر الرابط قابل للضغط */
+    .btn-icon {
+        background: var(--main-color);
+        pointer-events: auto; /* تفعيل اللمس */
+        z-index: 100;
+        width: 4rem;
+        height: 4rem;
+    }
+    
+    .btn-icon i { color: #fff; }
+
+
+    /* --- 2. إصلاح سهم الصفحة الرئيسية --- */
+    .home {
+        min-height: 100vh;
+        height: auto; /* السماح بالتمدد */
+        padding-bottom: 100px; /* مساحة للسهم */
+    }
+
+    .scroll-down {
+        display: block !important;
+        bottom: 30px; /* رفعه قليلاً عن الحافة */
+        z-index: 1000; /* ضمان ظهوره فوق كل شيء */
+    }
+    
+    .scroll-down i {
+        font-size: 4rem; /* تكبير السهم ليكون واضحاً */
+        background: rgba(0,0,0,0.5); /* خلفية خفيفة للسهم لضمان رؤيته */
+        border-radius: 50%;
+    }
+
+
+    /* --- 3. تنسيقات عامة للشاشات الصغيرة --- */
+    section {
+        padding: 8rem 5% 2rem;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+    
+    .contact-container { flex-direction: column; }
+    
+    /* إصلاح تداخل النصوص في صفحة التفاصيل */
+    .details-grid {
+        grid-template-columns: 1fr; /* عمود واحد */
+        gap: 3rem;
+    }
+    
+    .project-hero { height: 50vh; }
+    .project-hero-content h1 { font-size: 3.5rem; }
+}

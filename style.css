@@ -647,30 +647,63 @@ span { color: var(--main-color); }
 
 
 /* ================================================= */
-/* === TABLET & MOBILE FIXES (إصلاحات التابلت والموبايل) === */
+/* === TABLET & MOBILE FIXES (الحل النهائي الشامل) === */
 /* ================================================= */
 
-/* نستخدم 1024px ليشمل الآيباد والتابلت */
 @media (max-width: 1024px) {
 
+    /* --- 1. القائمة العلوية (Header & Navbar) --- */
     .header { padding: 2rem 4%; }
     
-    /* --- 1. إصلاح المشاريع (إظهار التفاصيل دائماً) --- */
-    .portfolio-container { grid-template-columns: 1fr; }
+    #menu-icon { display: block; }
 
+    .navbar {
+        position: absolute; top: 100%; left: 0; width: 100%;
+        padding: 1rem 3%; background: var(--second-bg-color);
+        border-top: 1px solid #333; display: none;
+    }
+    
+    .navbar.active { display: block; }
+    .navbar a { display: block; font-size: 2rem; margin: 3rem 0; }
+
+    /* --- 2. إصلاح التايم لاين (تعديلك الممتاز) --- */
+    .timeline-items::before {
+        left: 20px;
+    }
+
+    /* إلغاء التوزيع يمين/يسار وتوحيد الكل لجهة واحدة */
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding-left: 60px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+        width: 100%; /* ضمان أخذ العرض الكامل */
+    }
+
+    .timeline-dot {
+        left: 11px;
+    }
+
+    .timeline-content {
+        text-align: left !important;
+    }
+
+    /* --- 3. إصلاح المشاريع (إظهار التفاصيل دائماً) --- */
+    .portfolio-container { grid-template-columns: 1fr; }
+    
     .portfolio-box {
         height: auto;
-        min-height: 300px; /* زيادة الارتفاع ليتسع للنص */
+        min-height: 300px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end; /* المحتوى في الأسفل */
+        justify-content: flex-end;
     }
 
     .portfolio-layer {
         position: relative; /* إلغاء التموضع الحر */
         transform: translateY(0) !important; /* إجبار الظهور */
         opacity: 1 !important;
-        background: var(--second-bg-color); /* خلفية ثابتة */
+        background: var(--second-bg-color);
         padding: 2rem;
         width: 100%;
         height: auto;
@@ -678,7 +711,7 @@ span { color: var(--main-color); }
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border-top: 2px solid var(--main-color); /* خط جمالي */
+        border-top: 2px solid var(--main-color);
     }
     
     .portfolio-layer h4 { margin-bottom: 0.5rem; }
@@ -688,67 +721,50 @@ span { color: var(--main-color); }
         font-size: 1.3rem;
     }
 
-    /* جعل الأيقونة في الأعلى */
+    /* أيقونة المشروع */
     .project-placeholder {
         height: 150px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    
-    .project-placeholder i {
-        font-size: 5rem;
-    }
+    .project-placeholder i { font-size: 5rem; }
 
-    /* التأكد من أن زر الرابط قابل للضغط */
+    /* زر الرابط */
     .btn-icon {
         background: var(--main-color);
-        pointer-events: auto; /* تفعيل اللمس */
+        pointer-events: auto;
         z-index: 100;
-        width: 4rem;
-        height: 4rem;
+        width: 4rem; height: 4rem;
     }
-    
     .btn-icon i { color: #fff; }
 
 
-    /* --- 2. إصلاح سهم الصفحة الرئيسية --- */
+    /* --- 4. إصلاحات عامة --- */
+    /* السهم */
     .home {
         min-height: 100vh;
-        height: auto; /* السماح بالتمدد */
-        padding-bottom: 100px; /* مساحة للسهم */
+        height: auto;
+        padding-bottom: 100px;
     }
-
     .scroll-down {
         display: block !important;
-        bottom: 30px; /* رفعه قليلاً عن الحافة */
-        z-index: 1000; /* ضمان ظهوره فوق كل شيء */
+        bottom: 30px;
+        z-index: 1000;
     }
-    
     .scroll-down i {
-        font-size: 4rem; /* تكبير السهم ليكون واضحاً */
-        background: rgba(0,0,0,0.5); /* خلفية خفيفة للسهم لضمان رؤيته */
+        font-size: 4rem;
+        background: rgba(0,0,0,0.5);
         border-radius: 50%;
     }
 
-
-    /* --- 3. تنسيقات عامة للشاشات الصغيرة --- */
-    section {
-        padding: 8rem 5% 2rem;
-    }
-
-    .home-content h1 {
-        font-size: 4rem;
-    }
-    
+    /* هوامش الصفحة */
+    section { padding: 8rem 5% 2rem; }
+    .home-content h1 { font-size: 4rem; }
     .contact-container { flex-direction: column; }
     
-    /* إصلاح تداخل النصوص في صفحة التفاصيل */
-    .details-grid {
-        grid-template-columns: 1fr; /* عمود واحد */
-        gap: 3rem;
-    }
-    
+    /* صفحة التفاصيل */
+    .details-grid { grid-template-columns: 1fr; gap: 3rem; }
     .project-hero { height: 50vh; }
     .project-hero-content h1 { font-size: 3.5rem; }
 }

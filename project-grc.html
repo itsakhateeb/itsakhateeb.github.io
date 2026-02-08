@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRC AI | Project Details</title>
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">Ahmad<span>.</span></a>
+        <nav class="navbar">
+            <a href="index.html#projects" class="active"><i class='bx bx-arrow-back'></i> Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <h1>GRC AI</h1>
+            <p>Governance, Risk & Compliance with Local AI.</p>
+            <div class="tech-stack-display">
+                <span>Next.js 15</span>
+                <span>TypeScript</span>
+                <span>Ollama (Gemma2)</span>
+                <span>Tailwind CSS</span>
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <a href="#details">
+                <i class='bx bx-chevrons-down'></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="project-details" id="details">
+        <div class="details-container">
+            
+            <div class="project-img">
+                <img src="images/grc-dashboard.jpg" onerror="this.src='https://via.placeholder.com/1200x600/161b2e/00d2ff?text=GRC+AI+Dashboard'" alt="GRC AI Interface">
+            </div>
+
+            <div class="details-grid">
+                <div class="details-text">
+                    <h2>Project <span>Overview</span></h2>
+                    <p>
+                        GRC AI is a modern, AI-powered application designed to help organizations analyze policies, identify compliance gaps, and improve their regulatory posture. 
+                        Unlike traditional cloud-based solutions, this project focuses on <b>Data Privacy</b> by performing all AI analysis locally on the device.
+                    </p>
+                    <p>
+                        The system leverages <b>Ollama</b> running the <b>Gemma2 2B model</b> to interpret complex documents. It supports major frameworks like GDPR, ISO27001, HIPAA, and NIST, providing real-time risk scoring and actionable recommendations without any data leaving the secure environment.
+                    </p>
+                    
+                    <h2 style="margin-top: 3rem;">Key <span>Features</span></h2>
+                    <ul class="feature-list">
+                        <li><i class='bx bx-chip'></i> <b>100% Local AI:</b> Zero cloud dependencies using Ollama & Gemma2 2B for maximum privacy.</li>
+                        <li><i class='bx bx-scan'></i> <b>OCR Integration:</b> Advanced PDF analysis using <code>pdf-parse</code> to extract text from policy documents.</li>
+                        <li><i class='bx bx-analyse'></i> <b>Gap Analysis:</b> Automated identification of compliance gaps and risks across multiple frameworks.</li>
+                        <li><i class='bx bx-bar-chart-alt-2'></i> <b>Smart Dashboard:</b> Visualizes real-time compliance metrics and trends using Recharts.</li>
+                    </ul>
+
+                    <h2 style="margin-top: 3rem;">Technical <span>Pipeline</span></h2>
+                    <p style="color: #ccc; font-size: 1.5rem; line-height: 1.8;">
+                        1. <b>PDF Upload:</b> OCR extraction via <code>pdf-parse</code>.<br>
+                        2. <b>Processing:</b> Text cleaning and preprocessing.<br>
+                        3. <b>AI Analysis:</b> Local inference via Ollama (Gemma2 model).<br>
+                        4. <b>Result Parsing:</b> Structured JSON data extraction for the UI.<br>
+                    </p>
+
+                    <div class="project-actions" style="margin-top: 4rem;">
+                        <a href="https://github.com/Qusai-Ismael/grc-ai" target="_blank" class="btn">View on GitHub <i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+
+                <div class="details-sidebar">
+                    <div class="info-box">
+                        <h3>Project Info</h3>
+                        <ul>
+                            <li><strong>Type:</strong> AI & Cybersecurity</li>
+                            <li><strong>Role:</strong> Full Stack & AI Engineer</li>
+                            <li><strong>Tech:</strong> Next.js 15, Ollama, TS</li>
+                            <li><strong>Model:</strong> Gemma2 2B (Local)</li>
+                            <li><strong>Status:</strong> Completed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Copyright &copy; 2026 by Ahmad Alkhateeb | All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

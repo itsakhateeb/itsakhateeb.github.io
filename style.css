@@ -709,3 +709,63 @@ span { color: var(--main-color); }
     }
 }
 
+/* --- تحسينات القوائم (Feature & Pipeline) --- */
+
+/* إضافة مسافة علوية للعناوين بشكل أنيق */
+.mt-4 {
+    margin-top: 3rem;
+}
+
+/* تنسيق قائمة الخطوات (Pipeline) */
+.pipeline-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.pipeline-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: #ccc;
+    background: rgba(255, 255, 255, 0.03); /* خلفية خفيفة لكل خطوة */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: .3s;
+}
+
+.pipeline-list li:hover {
+    border-color: var(--main-color);
+    transform: translateX(5px);
+}
+
+/* تصميم دائرة الرقم (1, 2, 3...) */
+.step-number {
+    background: var(--main-color);
+    color: var(--bg-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    flex-shrink: 0; /* يمنع الدائرة من الانكماش على الموبايل */
+}
+
+/* تحسين قائمة المميزات (Features) لضمان عدم تداخل الأيقونة */
+.feature-list li {
+    display: flex;
+    align-items: flex-start; /* محاذاة الأيقونة مع أعلى النص */
+    gap: 1.5rem;
+}
+
+.feature-list li i {
+    min-width: 25px; /* حجز مساحة ثابتة للأيقونة */
+    margin-top: 5px; /* ضبط المحاذاة */
+}
+
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Watermarking | Project Details</title>
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">Ahmad<span>.</span></a>
+        <nav class="navbar">
+            <a href="index.html#projects" class="active"><i class='bx bx-arrow-back'></i> Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <h1>Digital Watermarking Tool</h1>
+            <p>Image Steganography & Attack Evaluation GUI.</p>
+            <div class="tech-stack-display">
+                <span>Python</span>
+                <span>Tkinter GUI</span>
+                <span>OpenCV</span>
+                <span>NumPy</span>
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <a href="#details">
+                <i class='bx bx-chevrons-down'></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="project-details" id="details">
+        <div class="details-container">
+            
+            <div class="project-img">
+                <img src="images/watermark-gui.jpg" onerror="this.src='https://via.placeholder.com/1200x600/161b2e/00d2ff?text=Watermarking+GUI+Screenshot'" alt="Watermarking GUI Interface">
+            </div>
+
+            <div class="details-grid">
+                
+                <div class="details-text">
+                    <h2>Project <span>Overview</span></h2>
+                    <p>
+                        This project is a comprehensive GUI-based tool developed for the "Information Hiding Techniques" course at Hashemite University. 
+                        The main objective is to embed secret watermarks into images using various algorithms and evaluate their robustness against digital attacks.
+                    </p>
+                    <p>
+                        The tool allows users to switch between <b>Spatial Domain (LSB)</b> and <b>Frequency Domain (DCT, DWT)</b> techniques. 
+                        It also simulates real-world attacks like compression and noise to test if the watermark can still be recovered.
+                    </p>
+                    
+                    <h2 class="mt-4">Key <span>Features</span></h2>
+                    <ul class="feature-list">
+                        <li>
+                            <i class='bx bx-layer'></i>
+                            <div><b>Multi-Technique Embedding:</b> Supports LSB (Spatial), DCT, and DWT (Frequency) methods.</div>
+                        </li>
+                        <li>
+                            <i class='bx bx-error'></i>
+                            <div><b>Attack Simulation:</b> Applies JPEG Compression, Blurring, Salt & Pepper Noise, Rotation, and Translation.</div>
+                        </li>
+                        <li>
+                            <i class='bx bx-bar-chart-alt'></i>
+                            <div><b>Quality Metrics:</b> Calculates PSNR, SSIM, BER, and NC to measure image quality and extraction accuracy.</div>
+                        </li>
+                        <li>
+                            <i class='bx bx-window-alt'></i>
+                            <div><b>Interactive GUI:</b> User-friendly interface to upload images, apply attacks, and visualize Original vs. Stego images.</div>
+                        </li>
+                    </ul>
+
+                    <h2 class="mt-4">Technical <span>Pipeline</span></h2>
+                    <ul class="pipeline-list">
+                        <li>
+                            <span class="step-number">1</span>
+                            <div><b>Embedding:</b> The secret message is hidden into the image pixels (LSB) or coefficients (DCT/DWT).</div>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <div><b>Attacking:</b> The watermarked image is subjected to noise or geometric distortions.</div>
+                        </li>
+                        <li>
+                            <span class="step-number">3</span>
+                            <div><b>Extraction:</b> The system attempts to retrieve the secret message from the attacked image.</div>
+                        </li>
+                        <li>
+                            <span class="step-number">4</span>
+                            <div><b>Evaluation:</b> Metrics (PSNR/SSIM) analyze the degradation, and (BER/NC) check message integrity.</div>
+                        </li>
+                    </ul>
+
+                    <div class="project-actions" style="margin-top: 4rem;">
+                        <a href="#" class="btn">View Source Code <i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+
+                <div class="details-sidebar">
+                    <div class="info-box">
+                        <h3>Project Info</h3>
+                        <ul>
+                            <li><strong>Category:</strong> Info. Security & Image Processing</li>
+                            <li><strong>Course:</strong> Information Hiding Techniques</li>
+                            <li><strong>Tech:</strong> Python, OpenCV, Tkinter</li>
+                            <li><strong>Semester:</strong> Spring 2024/2025</li>
+                            <li><strong>Team:</strong> 4 Members</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div> 
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Copyright &copy; 2026 by Ahmad Alkhateeb | All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

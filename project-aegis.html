@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEGIS (AI-EDR) | Ahmad Alkhateeb | Cybersecurity Portfolio</title>
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #0c0816; 
+            --bg-card: rgba(112, 0, 255, 0.03); 
+            --accent-primary: #7000ff; 
+            --accent-secondary: #00f0ff; 
+            --text-main: #ffffff;
+            --text-muted: #8b95a5;
+            --glass-border: rgba(112, 0, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+
+        body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* --- Glass Navigation --- */
+        nav {
+            position: fixed; width: 100%; top: 0; padding: 1rem 5%;
+            background: rgba(12, 8, 22, 0.8); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border); z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .nav-logo { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; display: flex; align-items: center; gap: 1rem; }
+        .nav-logo span { color: var(--accent-primary); }
+        .aegis-logo-small { width: 40px; height: auto; }
+        .back-link { font-size: 1.1rem; color: var(--text-muted); transition: 0.3s; display: flex; align-items: center; gap: 0.5rem; }
+        .back-link:hover { color: var(--accent-primary); transform: translateX(-5px); }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 12rem 5% 5rem; min-height: 70vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            background: radial-gradient(circle at center, rgba(112, 0, 255, 0.25) 0%, transparent 60%);
+        }
+
+        .aegis-logo-large { width: 150px; height: auto; margin-bottom: 2rem; filter: drop-shadow(0 0 15px var(--accent-primary)); }
+
+        .badge {
+            background: rgba(112, 0, 255, 0.15); border: 1px solid var(--accent-primary);
+            color: var(--accent-primary); padding: 0.5rem 1.5rem; border-radius: 50px;
+            font-size: 0.9rem; font-weight: 600; margin-bottom: 2rem; letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--accent-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero h2 { font-size: 2rem; color: var(--text-muted); font-weight: 400; margin-bottom: 2rem; }
+
+        .hero p { max-width: 800px; font-size: 1.2rem; color: var(--text-muted); margin-bottom: 3rem; }
+
+        /* --- Quick Info Board --- */
+        .info-board {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;
+            padding: 3rem; background: rgba(12, 8, 22, 0.5); border: 1px solid var(--glass-border);
+            border-radius: 20px; backdrop-filter: blur(10px); width: 90%; max-width: 1100px; margin: -5rem auto 5rem; position: relative; z-index: 10;
+        }
+
+        .info-card { text-align: center; padding: 1rem; border-right: 1px solid var(--glass-border); }
+        .info-card:last-child { border-right: none; }
+        .info-value { font-size: 1.5rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+        .info-label { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .info-card i { font-size: 2.5rem; color: var(--accent-primary); margin-bottom: 1rem; display: block; }
+
+        /* --- Main Content --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+        
+        .section-title { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; position: relative; display: inline-block; left: 50%; transform: translateX(-50%); }
+        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 60px; height: 3px; background: var(--accent-primary); border-radius: 2px; }
+        .section-title span { color: var(--accent-primary); }
+
+        /* --- Dashboard Simulation Display --- */
+        .dashboard-sim {
+            margin: 6rem 0; padding: 2rem; background: var(--bg-card); border-radius: 25px; border: 1px solid var(--glass-border);
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+        }
+        .dashboard-sim h3 { font-size: 2rem; margin-bottom: 1rem; color: #fff; }
+        .dashboard-sim p { color: var(--text-muted); max-width: 600px; margin-bottom: 2rem; }
+        
+        .sim-image-placeholder {
+            width: 100%; max-width: 1000px; height: 500px; background: #000; border-radius: 15px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            border: 2px solid var(--glass-border); position: relative; overflow: hidden;
+        }
+        .sim-image-placeholder::before { content: ''; position: absolute; width: 200%; height: 200%; background: radial-gradient(circle at center, rgba(112, 0, 255, 0.2), transparent 60%); animation: pulse 4s infinite; }
+        .sim-image-placeholder i { font-size: 5rem; color: rgba(112, 0, 255, 0.3); z-index: 1; margin-bottom: 1rem; }
+        .sim-image-placeholder span { font-size: 1.2rem; color: rgba(112, 0, 255, 0.5); z-index: 1; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+        .threat-alert { position: absolute; top: 20px; right: 20px; background: rgba(255, 0, 0, 0.1); border: 1px solid red; color: red; padding: 0.5rem 1rem; border-radius: 5px; font-weight: 800; font-size: 0.8rem; z-index: 2; animation: blink 1s infinite; }
+
+        /* --- Features & Pipeline --- */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 6rem; align-items: start; }
+        
+        .feature-block h3 { font-size: 2rem; margin-bottom: 1.5rem; }
+        .feature-list { list-style: none; display: grid; gap: 1.5rem; }
+        .feature-item { display: flex; gap: 1.5rem; align-items: start; }
+        .feature-item i { font-size: 1.8rem; color: var(--accent-primary); flex-shrink: 0; margin-top: 0.3rem; }
+        .feature-item h4 { font-size: 1.2rem; color: #fff; margin-bottom: 0.3rem; }
+        .feature-item p { color: var(--text-muted); font-size: 0.95rem; }
+
+        .pipeline { padding: 3rem; background: var(--bg-card); border-radius: 20px; border: 1px solid var(--glass-border); }
+        .pipeline h3 { font-size: 1.8rem; margin-bottom: 2rem; text-align: center; color: #fff; }
+        .step { display: flex; gap: 1.5rem; margin-bottom: 2.5rem; position: relative; }
+        .step:last-child { margin-bottom: 0; }
+        .step::before { content: ''; position: absolute; left: 20px; top: 50px; bottom: -30px; width: 1px; background: var(--glass-border); }
+        .step:last-child::before { display: none; }
+        
+        .step-number {
+            width: 40px; height: 40px; background: var(--bg-main); border: 1px solid var(--accent-primary);
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 1.1rem; font-weight: 800; color: var(--accent-primary); z-index: 2; flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(112, 0, 255, 0.3);
+        }
+        .step-content h4 { font-size: 1.3rem; margin-bottom: 0.3rem; color: #fff; }
+        .step-content p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* --- Document Section --- */
+        .pdf-section { margin: 6rem 0; text-align: center; }
+        .pdf-container {
+            width: 100%; height: 750px; border-radius: 20px; border: 1px solid var(--glass-border);
+            overflow: hidden; margin: 3rem 0; background: #1a1a24;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .pdf-container iframe { width: 100%; height: 100%; border: none; }
+        
+        .btn {
+            display: inline-flex; align-items: center; gap: 1rem; padding: 1rem 3.5rem;
+            background: var(--accent-primary); color: #fff; font-weight: 800;
+            border-radius: 50px; font-size: 1.1rem; transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(112, 0, 255, 0.3);
+        }
+        .btn:hover { box-shadow: 0 0 30px var(--accent-primary); transform: translateY(-3px); }
+
+        /* --- Animations --- */
+        @keyframes pulse { 0% { opacity: 0.5; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.05); } 100% { opacity: 0.5; transform: scale(1); } }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 3.5rem; }
+            .hero h2 { font-size: 1.5rem; }
+            .grid-2 { grid-template-columns: 1fr; gap: 3rem; }
+            .info-board { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem; text-align: left; }
+            .info-card { border-right: none; border-bottom: 1px solid var(--glass-border); padding-bottom: 1.5rem; display: flex; align-items: center; gap: 1.5rem; }
+            .info-card:last-child { border-bottom: none; padding-bottom: 0; }
+            .info-card i { margin-bottom: 0; flex-shrink: 0; }
+            .info-card div { text-align: left; }
+            .pdf-container { height: 500px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo" style="text-decoration: none;">
+            <img src="aegisloogo.png" alt="Aegis Logo" class="aegis-logo-small">
+            Ahmad<span>.</span>
+        </a>
+        <a href="index.html#projects" class="back-link"><i class='bx bx-left-arrow-alt'></i> Portfolio</a>
+    </nav>
+
+    <header class="hero">
+        <img src="aegisloogo.png" alt="Aegis Logo Large" class="aegis-logo-large">
+        <div class="badge">Distinguished Graduation Project</div>
+        <h1>AEGIS</h1>
+        <h2>Enhancing EDR Systems Using AI</h2>
+        <p>Aegis is an adaptive Endpoint Detection and Response system that leverages machine learning to identify sophisticated threats and autonomously execute dynamic, real-time mitigation plans, providing self-learning protection against zero-day attacks.</p>
+    </header>
+
+    <div class="info-board">
+        <div class="info-card">
+            <i class='bx bx-award'></i>
+            <div>
+                <div class="info-value">Distinguished</div>
+                <div class="info-label">Project Award</div>
+            </div>
+        </div>
+        <div class="info-card">
+            <i class='bx bx-chip'></i>
+            <div>
+                <div class="info-value">Machine Learning</div>
+                <div class="info-label">Core Technology</div>
+            </div>
+        </div>
+        <div class="info-card">
+            <i class='bx bx-run'></i>
+            <div>
+                <div class="info-value">Real-Time</div>
+                <div class="info-label">Dynamic Response</div>
+            </div>
+        </div>
+        <div class="info-card">
+            <i class='bx bxs-brain'></i>
+            <div>
+                <div class="info-value">Self-Learning</div>
+                <div class="info-label">Adaptation Engine</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        
+     <section class="dashboard-sim">
+            <h3>EDR Dashboard <span>Simulation</span></h3>
+            <p>Our simulation demonstrates Aegis's ability to visualize threat landscapes, track infected hosts, and recommend dynamic response actions based on AI confidence scores.</p>
+            
+            <div class="sim-image-placeholder" style="padding: 0; background: transparent; border: none;">
+                <div class="threat-alert">THREAT DETECTED</div>
+                
+                <img src="aegis_dashboard.png" alt="Aegis Dashboard" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px; border: 2px solid var(--glass-border);">
+            </div>
+        </section>
+
+        <section class="grid-2">
+            <div class="feature-block">
+                <h3>Core <span>Capabilities</span></h3>
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <i class='bx bx-target-lock'></i>
+                        <div>
+                            <h4>Advanced AI Threat Detection</h4>
+                            <p>Utilizes ML models to analyze behavioral anomalies and detect complex attacks that bypass signature-based EDRs.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class='bx bx-git-branch'></i>
+                        <div>
+                            <h4>Dynamic Mitigation Plans</h4>
+                            <p>AI generates customized, prioritized response plans (e.g., isolate host, revoke credentials) adapted to the specific threat context.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class='bx bx-sync'></i>
+                        <div>
+                            <h4>Continuous Self-Learning</h4>
+                            <p>The system adapts and improves its detection accuracy over time by learning from newly identified threats and environment changes.</p>
+                        </div>
+                    </li>
+                </div>
+            </div>
+
+            <div class="pipeline">
+                <h3>Adaptive Response <span>Pipeline</span></h3>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Data Aggregation</h4>
+                        <p>Aggregates system logs, process activity, and network traffic from protected endpoints.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>AI Threat Analysis</h4>
+                        <p>ML models process data in real-time, identifying behavioral anomalies and potential compromises.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Dynamic Response Generation</h4>
+                        <p>AI engine creates and prioritizes a contextual mitigation plan adapted to the specific threat.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Automated Execution</h4>
+                        <p>Executes response actions autonomously or prompts SOC analysts for high-confidence mitigation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pdf-section">
+            <h2 class="section-title">Project <span>Summary</span></h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; margin-bottom: 2rem;">For confidentiality and intellectual property protection, the full source code and original thesis are kept private. Below is a simplified presentation outlining the core architecture, AI models, and simulation results.</p>
+            
+            <div class="pdf-container">
+                <iframe src="AEGIS_Presentation.pdf" title="AEGIS Project Summary Presentation">
+                    <p>Your browser does not support PDF viewing. <a href="AEGIS_Presentation.pdf">Download it here</a>.</p>
+                </iframe>
+            </div>
+
+            <a href="AEGIS_Presentation.pdf" download class="btn">Download Presentation <i class='bx bxs-download'></i></a>
+        </section>
+
+    </main>
+
+    <footer style="text-align: center; padding: 3rem 0; color: var(--text-muted); border-top: 1px solid var(--glass-border); margin-top: 5rem;">
+        <p>Copyright &copy; 2026 Ahmad Alkhateeb | Cybersecurity Portfolio | Aegis Project</p>
+    </footer>
+
+</body>
+</html>

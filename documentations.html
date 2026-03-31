@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentations & Research | Ahmad Alkhateeb</title>
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo3.png">
+
+    <style>
+        :root {
+            --bg-main: #0b111e;
+            --bg-card: #161b2e;
+            --accent-primary: #00d2ff;
+            --text-main: #ededed;
+            --text-muted: #aaa;
+            --glass-border: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            padding-top: 10rem; /* مساحة للهيدر */
+        }
+
+        /* --- Header Adjustments --- */
+        .header {
+            position: fixed; top: 0; left: 0; width: 100%; padding: 2rem 9%;
+            background: rgba(11, 17, 30, 0.95); backdrop-filter: blur(10px);
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 100; border-bottom: 1px solid var(--glass-border);
+        }
+        .logo { font-size: 2.4rem; color: #fff; font-weight: 700; }
+        .logo span { color: var(--accent-primary); }
+        .back-link { font-size: 1.6rem; color: #fff; font-weight: 500; transition: .3s; display: flex; align-items: center; gap: 0.5rem;}
+        .back-link:hover { color: var(--accent-primary); }
+
+        /* --- Documentations Section --- */
+        .docs-section {
+            padding: 5rem 9%;
+            min-height: 80vh;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 4.5rem;
+            margin-bottom: 5rem;
+        }
+        .heading span { color: var(--accent-primary); }
+
+        .docs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        /* --- Document Card Design --- */
+        .doc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.5rem;
+            padding: 3rem 2.5rem;
+            transition: 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.1);
+        }
+
+        .doc-icon {
+            font-size: 5rem;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .doc-tag {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent-primary);
+            padding: 0.4rem 1rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: 1px solid var(--accent-primary);
+        }
+
+        .doc-title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .doc-desc {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            flex-grow: 1; /* لدفع الزر للأسفل دائماً */
+            line-height: 1.6;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.2rem 2rem;
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            color: var(--accent-primary);
+            border-radius: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .btn-download:hover {
+            background: var(--accent-primary);
+            color: var(--bg-main);
+            box-shadow: 0 0 15px var(--accent-primary);
+        }
+
+        @media (max-width: 768px) {
+            .heading { font-size: 3.5rem; }
+            .docs-section { padding: 3rem 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">Ahmad<span>.</span></a>
+        <a href="index.html" class="back-link"><i class='bx bx-left-arrow-alt'></i> Back to Home</a>
+    </header>
+
+    <section class="docs-section">
+        <h2 class="heading">My <span>Documentations</span></h2>
+        <p style="text-align: center; font-size: 1.6rem; color: var(--text-muted); margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+            A repository of my research papers, technical write-ups, and study notes from various cybersecurity platforms and personal projects.
+        </p>
+
+        <div class="docs-container">
+            
+            <div class="doc-card">
+                <i class='bx bxs-file-pdf doc-icon'></i>
+                <span class="doc-tag">TryHackMe</span>
+                <h3 class="doc-title">Introduction to SIEM</h3>
+                <p class="doc-desc">Comprehensive notes and research covering the fundamentals of Security Information and Event Management (SIEM), log analysis, and threat monitoring based on the TryHackMe room.</p>
+                
+                <a href="SIEM.pdf" download class="btn-download">
+                    Download PDF <i class='bx bxs-download'></i>
+                </a>
+            </div>
+
+            </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem 0; color: #aaa; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 5rem;">
+        <p>Copyright &copy; 2026 by Ahmad Alkhateeb | All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

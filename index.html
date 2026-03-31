@@ -24,6 +24,7 @@
             <a href="#projects">Projects</a>
             <a href="#certificates">Certificates</a>
             <a href="#skills">Skills</a>
+            <a href="#docs">Docs</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -129,7 +130,7 @@
                 <div class="portfolio-layer">
                     <h4>Phishing Detection</h4>
                     <p>Machine learning model to detect malicious URLs.</p>
-                    <a href="projectPhishing.html" class="btn-icon"><i class='bx bx-link-external'></i></a>
+                    <a href="project-phishing.html" class="btn-icon"><i class='bx bx-link-external'></i></a>
                 </div>
             </div>
     
@@ -157,15 +158,12 @@
                 <span class="cert-badge badge-gold">2025 Winner</span>
             </div>
 
-            
-         <div class="service-box">
+            <div class="service-box">
                 <i class="fa-solid fa-diagram-project"></i>
                 <h3>Networking Basics (Cisco)</h3>
                 <p>Completed foundational networking training covering communication models, IP addressing, and basic network troubleshooting.</p>
                 <span class="cert-badge badge-completed">Completed 2026</span>
             </div>
-
-
 
             <div class="service-box">
                 <i class="fa-brands fa-microsoft"></i>
@@ -239,26 +237,48 @@
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="services" id="docs">
+        <h2 class="heading">My <span>Documentations</span></h2>
+        <p style="text-align: center; font-size: 1.5rem; color: #aaa; margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            A repository of my research papers, technical write-ups, and study notes from various cybersecurity platforms.
+        </p>
+
+        <div class="services-container">
+            
+            <div class="service-box" style="border: 1px solid var(--main-color); position: relative;">
+                <i class='bx bxs-file-pdf' style="font-size: 6rem; margin-bottom: 1rem;"></i>
+                <h3 style="margin-bottom: 0.5rem;">Introduction to SIEM</h3>
+                <span class="cert-badge badge-completed" style="margin-bottom: 1.5rem;">TryHackMe</span>
+                <p>Comprehensive notes and research covering the fundamentals of Security Information and Event Management (SIEM), log analysis, and threat monitoring.</p>
+                
+                <a href="SIEM_Notes.pdf" download class="btn" style="margin-top: 1rem; padding: 1rem 2rem; width: 100%;">
+                    Download PDF <i class='bx bxs-download'></i>
+                </a>
+            </div>
+
+            </div>
+    </section>
+
+    <section class="contact" id="contact" style="background: var(--second-bg-color);">
         <h2 class="heading">Contact <span>Me</span></h2>
         
         <div class="contact-container">
             <div class="contact-info">
-                <div class="contact-card">
+                <div class="contact-card" style="background: var(--bg-color);">
                     <i class='bx bxs-envelope'></i>
                     <div>
                         <h4>Email</h4>
                         <p>ahmad.khateebb@outlook.com</p>
                     </div>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card" style="background: var(--bg-color);">
                     <i class='bx bxs-phone-call'></i>
                     <div>
                         <h4>Phone</h4>
                         <p>+962795052320</p>
                     </div>
                 </div>
-                <div class="contact-card">
+                <div class="contact-card" style="background: var(--bg-color);">
                     <i class='bx bxs-map'></i>
                     <div>
                         <h4>Location</h4>
@@ -267,17 +287,17 @@
                 </div>
             </div>
 
-            <div class="contact-form">
+            <div class="contact-form" style="background: var(--bg-color);">
                 <h3>Message Me</h3>
                 <form action="mailto:ahmad.khateebb@outlook.com" method="post" enctype="text/plain">
                     <div class="input-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" placeholder="Your Name" required style="background: var(--second-bg-color);">
                     </div>
                     <div class="input-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" placeholder="Your Email" required style="background: var(--second-bg-color);">
                     </div>
                     <div class="input-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                        <textarea placeholder="Your Message" required style="background: var(--second-bg-color);"></textarea>
                     </div>
                     <input type="submit" value="Send Message" class="btn" style="width: 100%;">
                 </form>
